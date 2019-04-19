@@ -15,6 +15,7 @@ const initialState = {
     fetchingFriends: false,
     friends: [],
     loggingIn: false,
+    loginError: '',
     savingFriends: false,
     updatingFriend: false,
     error: null
@@ -25,7 +26,7 @@ const reducer = (state = initialState, action) => {
     case LOGIN_START:  {
         return {
             ...state,
-            error: '',
+            loginError: '',
             loggingIn: true,
         }
     }
@@ -38,7 +39,7 @@ const reducer = (state = initialState, action) => {
     case LOGIN_FAILURE: {
         return {
             ...state,
-            error: 'Login Failed'
+            loginError: 'Login Failed'
             loggingIn: false
         }
     }
