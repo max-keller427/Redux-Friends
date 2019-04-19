@@ -33,12 +33,12 @@ export const getFriendsData = () => dispatch => {
         type: FRIENDS_SUCCESS,
         payload: res.data.data
       });
-    });
+    })
     .catch(err => {
       console.log(err.response);
       if (err.response.status === 403) {
-        localStorage.removeItem('token');
+        localStorage.removeItem("token");
       }
-      dispatch( {type: FRIENDS_FAILURE, payload: err.response} )
-    })
+      dispatch({ type: FRIENDS_FAILURE, payload: err.response });
+    });
 };
