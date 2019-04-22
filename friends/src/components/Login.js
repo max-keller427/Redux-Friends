@@ -28,6 +28,7 @@ class Login extends React.Component {
   };
 
   render() {
+    // console.log();
     return (
       <div>
         {this.props.loginError && <p>Error on login, try again</p>}
